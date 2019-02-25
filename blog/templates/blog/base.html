@@ -1,6 +1,4 @@
-{% extends 'blog/base.html' %}
 {% load static %}
-
 <html>
     <head>
         <title>AI big data 2조</title>
@@ -14,17 +12,13 @@
             <h1><a href="/">AI Big Data 2조</a></h1>
         </div>
 
-
-        {% block content %}
-            {% for post in posts %}
-                <div class="post">
-                    <div class="date">
-                        {{ post.published_date }}
-                    </div>
-                    <h1><a href="{% url 'post_detail' pk=post.pk %}">{{ post.title }}</a></h1>
-                    <p>{{ post.text|linebreaksbr }}</p>
+        <div class="content container">
+            <div class="row">
+                <div class="col-md-8">
+                {% block content %}
+                {% endblock %}
                 </div>
-            {% endfor %}
-        {% endblock %}
+            </div>
+        </div>
     </body>
 </html>
