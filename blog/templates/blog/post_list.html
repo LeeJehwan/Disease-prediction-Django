@@ -25,6 +25,44 @@
                     <p>{{ post.text|linebreaksbr }}</p>
                 </div>
             {% endfor %}
+
+
+        <div class="train_data">
+            <table class="table table-striped">
+                <thead>
+                <tr>
+                    <td><B>가입자일련변호</B></td>
+                    <td><B>성별코드</B></td>
+                    <td><B>연령대코드</B></td>
+                    <td><B>시도코드</B></td>
+                    <td><B>신장(5Cm단위)</B></td>
+                    <td><B>체중(5Kg단위)</B></td>
+                    <td><B>허리둘레</B></td>
+                    <td><B>시력(좌)</B></td>
+                </tr>
+                </thead>
+                <!-- 이 부분이 바뀌었습니다 -->
+                <tbody>
+                {% for train_data in train_datas %}
+                <tr>
+                    <td> {{ train_data.id }} </td>
+                    <td> {{ train_data.sex }} </td>
+                    <td> {{ train_data.old }} </td>
+                    <td>{{ train_data.city_sig }} </td>
+                    <td> {{ train_data.height }} </td>
+                    <td> {{ train_data.weight }} </td>
+                    <td> {{ train_data.waist }} </td>
+                    <td>{{ train_data.eye_left }} </td>
+                </tr>
+                {% endfor %}
+                <!-- 여기까지 -->
+                <tbody>
+            </table>
+        </div>
+
+
         {% endblock %}
+
+
     </body>
 </html>
