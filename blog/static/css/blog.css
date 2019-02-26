@@ -1,5 +1,15 @@
 {% load static %}
 
+#title{
+   font-size: 50;
+   font-family: 'Nanum Gothic', sans-serif;
+   font-weight: bold;
+   position: fixed;
+   text-align: center;
+   left:33%;
+   top : 30%
+
+}
 
 #bg {
   position: fixed;

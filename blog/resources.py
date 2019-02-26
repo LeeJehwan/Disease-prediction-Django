@@ -10,3 +10,4 @@ class PersonResource(resources.ModelResource):
 class TrainResource(resources.ModelResource):
     class Meta:
         model = Train_data
+

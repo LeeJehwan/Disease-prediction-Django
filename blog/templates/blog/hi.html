@@ -1,20 +1,17 @@
 <!DOCTYPE html>
-{% load staticfiles %}
-{% load static %}
-<html lang="ko">
+<html lang="en">
 <head>
   <!-- Theme Made By www.w3schools.com - No Copyright -->
-  <title>AI · big data 2조</title>
+  <title>Bootstrap Theme Simply Me</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link href="https://fonts.googleapis.com/css?family=Nanum+Gothic" rel="stylesheet">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
   <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
-  <script src="hthttp://127.0.0.1:8000/static/image/back5.jpgtps://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
   <style>
   body {
-    font-family: 'Nanum Gothic', sans-serif;
+    font: 20px Montserrat, sans-serif;
     line-height: 1.8;
     color: #f5f6f7;
   }
@@ -52,10 +49,8 @@
   .navbar-nav  li a:hover {
     color: #1abc9c !important;
   }
-
   </style>
 </head>
-
 <body>
 
 <!-- Navbar -->
@@ -67,67 +62,35 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a class="navbar-brand" href="/">AI · Big data B반 2조</a>
+      <a class="navbar-brand" href="#">Me</a>
     </div>
     <div class="collapse navbar-collapse" id="myNavbar">
       <ul class="nav navbar-nav navbar-right">
-
-          <li><a href="{% url 'analysis' %}"><font size="4">질병 진단</font></a></li>
-          <li><a href="{% url 'result' %}"><font size="4">분석 결과</font></a></li>
-          <li><a href="{% url 'result' %}"><font size="4">who</font></a></li>
-
+        <li><a href="#">WHO</a></li>
+        <li><a href="#">WHAT</a></li>
+        <li><a href="#">WHERE</a></li>
       </ul>
     </div>
   </div>
 </nav>
 
-
-
-
-
-<!--
-<div id ="title">
-        당신의 질병을 진단해 드립니다.
-</div>
-
-<div id = "bg">
-<img src="{% static 'image/back5.jpg' %}" alt="">
-</div>
--->
-
 <!-- First Container -->
 <div class="container-fluid bg-1 text-center">
-    <h1 class="margin">
-        <span style="font-weight:bold;">
-            질병을 예측하고 싶으신가요?
-        </span>
-    </h1>
-    <center>
-  <img src="{% static 'image/back5.jpg' %}" class="img-responsive img-circle margin"  alt="Bird" width="1350" height="1350">
-        </center>
-  <h3>내가 도와줌ㅎ </h3>
+  <h3 class="margin">Who Am I?</h3>
+  <img src="bird.jpg" class="img-responsive img-circle margin" style="display:inline" alt="Bird" width="350" height="350">
+  <h3>I'm an adventurer</h3>
 </div>
 
 <!-- Second Container -->
 <div class="container-fluid bg-2 text-center">
   <h3 class="margin">What Am I?</h3>
   <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. </p>
-  <a href="{% url 'analysis' %}" class="btn btn-default btn-lg">
-    <span class="glyphicon glyphicon-search"></span> 분석해보기
+  <a href="#" class="btn btn-default btn-lg">
+    <span class="glyphicon glyphicon-search"></span> Search
   </a>
 </div>
 
-
-
-</body>
-</html>
-
-
 <!-- Third Container (Grid) -->
-
-<!--
-
-
 <div class="container-fluid bg-3 text-center">
   <h3 class="margin">Where To Find Me?</h3><br>
   <div class="row">
@@ -146,56 +109,10 @@
   </div>
 </div>
 
+<!-- Footer -->
+<footer class="container-fluid bg-4 text-center">
+  <p>Bootstrap Theme Made By <a href="https://www.w3schools.com">www.w3schools.com</a></p>
+</footer>
 
-
-<center>
-<img src="{% static 'image/ggang.png' %}", width = "500", height="500">
-</center>
-        {% for post in posts %}
-            <div class="post">
-                <div class="date">
-                    {{ post.published_date }}
-                </div>
-                <h1><a href="{% url 'post_detail' pk=post.pk %}">{{ post.title }}</a></h1>
-                <p>{{ post.text|linebreaksbr }}</p>
-            </div>
-        {% endfor %}
-
-        <div class="train_data">
-            <table class="table table-striped">
-                <thead>
-                <tr>
-                    <td><B>가입자일련변호</B></td>
-                    <td><B>성별코드</B></td>
-                    <td><B>연령대코드</B></td>
-                    <td><B>시도코드</B></td>
-                    <td><B>신장(5Cm단위)<./B></td>
-                    <td><B>체중(5Kg단위)</B></td>
-                    <td><B>허리둘레</B></td>
-                    <td><B>시력(좌)</B></td>
-                </tr>
-                </thead>
-
-                <tbody>
-                {% for train_data in train_datas %}
-                <tr>
-                    <td> {{ train_data.id }} </td>
-                    <td> {{ train_data.sex }} </td>
-                    <td> {{ train_data.old }} </td>
-                    <td>{{ train_data.city_sig }} </td>
-                    <td> {{ train_data.height }} </td>
-                    <td> {{ train_data.weight }} </td>
-                    <td> {{ train_data.waist }} </td>
-                    <td>{{ train_data.eye_left }} </td>
-                </tr>
-                {% endfor %}
-
-                <tbody>
-            </table>
-        </div>
-
-
-
-
-
--->
+</body>
+</html>

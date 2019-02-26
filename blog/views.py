@@ -78,8 +78,13 @@ def simple_upload2(request):
 
     return render(request, 'core/simple_upload2.html')
 
-def no_diease(request):
-    return render(request, 'blog/no_diease.html', {})
+
+def no_disease(request):
+    return render(request, 'blog/no_disease.html', {})
+
+
+def has_disease(request):
+    return render(request, 'blog/has_disease.html', {})
 
 
 def analysis(request):
@@ -88,3 +93,8 @@ def analysis(request):
 
 def result(request):
     return render(request, 'blog/result.html', {})
+
+
+
+def hi(request):
+    return render(request, 'blog/hi.html', {})
