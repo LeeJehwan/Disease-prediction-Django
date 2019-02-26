@@ -77,3 +77,14 @@ def simple_upload2(request):
             train_resource.import_data(dataset, dry_run=False)  # Actually import now
 
     return render(request, 'core/simple_upload2.html')
+
+def no_diease(request):
+    return render(request, 'blog/no_diease.html', {})
+
+
+def analysis(request):
+    return render(request, 'blog/analysis.html', {})
+
+
+def result(request):
+    return render(request, 'blog/result.html', {})

@@ -9,14 +9,34 @@
     </head>
     <body>
 
+    <nav class="navbar navbar-default">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <a class="navbar-brand" href="/">  AI Big Data 2조  </a>
+        </div>
+        <ul class="nav navbar-nav">
+          <li><a href="/">Home</a></li>
+          <li><a href="{% url 'analysis' %}">분석</a></li>
+          <li><a href="{% url 'result' %}">결과</a></li>
+        </ul>
+        <ul class="nav navbar-nav navbar-right">
+          <li><a href="#"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
+          <li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+        </ul>
+      </div>
+    </nav>
+
+
+<!--
         <div class = "page-header">
             <center>
-            <a href="{% url 'post_new' %}" class="top-menu"><span class="glyphicon glyphicon-plus"></span></a>
+            <a href="{% url 'post_new' %}" class="top-menu"></a>
                 <h1><a href="/">AI Big Data 2조</a></h1></center>
         </div>
+  -->
 
 
-        <p>{{data1}}</p>
+
         <div class="content container">
             <div class="row">
                 <div class="col-md-8">
