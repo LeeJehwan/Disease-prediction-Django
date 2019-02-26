@@ -21,15 +21,15 @@
   p {font-size: 16px;}
   .margin {margin-bottom: 45px;}
   .bg-1 {
-    background-color: #1abc9c; /* Green */
-    color: #ffffff;
+    background-color: #417690; /* Green */
+    color: #000000;
   }
   .bg-2 {
     background-color: #474e5d; /* Dark Blue */
-    color: #ffffff;
+    color: #000000;
   }
   .bg-3 {
-    background-color: #ffffff; /* White */
+    background-color: #474e5d; /* White */
     color: #555555;
   }
   .bg-4 {
@@ -83,9 +83,20 @@
 
 
 
+<!-- First Container -->
+<div class="container-fluid bg-1 text-center">
+
+<h1>합병증 진단</h1><br><br>
+
+    <form method="POST" class="post-form">{% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit" class="save btn btn-default">제출</button>
+    </form>
 
 
-<h1> <font color="black"> 질병있음  </font></h1>
+</div>
+
+
 
 
 

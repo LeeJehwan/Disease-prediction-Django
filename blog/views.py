@@ -2,13 +2,17 @@ from django.shortcuts import render
 from django.utils import timezone
 from .models import Post
 from .models import Train_data
+from .models import Person1_train
+
 from django.shortcuts import render, get_object_or_404
-from .forms import PostForm
+from .forms import PostForm, Person1Form
 from django.shortcuts import redirect
 from tablib import Dataset
 from django.http import HttpResponse
 from .resources import PersonResource
 from .resources import TrainResource
+
+
 
 def post_list(request):
     posts = Post.objects.filter(published_date__lte = timezone.now()).order_by('published_date')
@@ -83,8 +87,22 @@ def no_disease(request):
     return render(request, 'blog/no_disease.html', {})
 
 
+
 def has_disease(request):
-    return render(request, 'blog/has_disease.html', {})
+    if request.method == "POST":
+        form = Person1Form(request.POST)
+        if form.is_valid():
+            post = form.save(commit=False)
+            post.author = request.user
+            post.published_date = timezone.now()
+            post.save()
+            return redirect('has_disease')
+    else:
+        form = Person1Form()
+    return render(request, 'blog/has_disease.html', {'form': form})
+
+
+
 
 
 def analysis(request):
@@ -94,7 +112,3 @@ def analysis(request):
 def result(request):
     return render(request, 'blog/result.html', {})
 
-
-
-def hi(request):
-    return render(request, 'blog/hi.html', {})

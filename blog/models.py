@@ -1,6 +1,6 @@
 from django.db import models
 from django.utils import timezone
-
+from django import forms
 
 class Post(models.Model):
     author = models.ForeignKey('auth.User', on_delete=models.CASCADE)
@@ -25,36 +25,37 @@ class Post(models.Model):
 
 
 class Train_data(models.Model):
-    id = models.IntegerField(primary_key=True) # min: 3, max: 999990, mean: 499712.00722
-    sex = models.PositiveSmallIntegerField(null=True, blank=True) # min: 1, max: 2, mean: 1.499904
-    old = models.PositiveSmallIntegerField(null=True, blank=True) # min: 5, max: 18, mean: 10.421392
-    city_sig = models.PositiveSmallIntegerField(null=True, blank=True) # min: 11, max: 49, mean: 33.614376
-    height = models.PositiveSmallIntegerField(null=True, blank=True) # min: 135, max: 205, mean: 161.9795
-    weight = models.PositiveSmallIntegerField(null=True, blank=True) # min: 30, max: 145, mean: 62.05638
-    waist = models.PositiveSmallIntegerField(null=True, blank=True) # min: 48, max: 166, mean: 79.958884
-    eye_left = models.PositiveSmallIntegerField(null=True, blank=True) # min: 0, max: 1, mean: 0.013892
-    eye_right = models.PositiveSmallIntegerField(null=True, blank=True) # min: 0, max: 1, mean: 0.014052
-    hearing_left = models.PositiveSmallIntegerField(null=True, blank=True) # min: 1, max: 2, mean: 1.030424
-    hearing_right = models.PositiveSmallIntegerField(null=True, blank=True) # min: 1, max: 2, mean: 1.029456
-    systolic_pressure = models.PositiveSmallIntegerField(null=True, blank=True) # min: 70, max: 236, mean: 121.438776
-    diastolic_pressure = models.PositiveSmallIntegerField(null=True, blank=True) # min: 39, max: 151, mean: 75.451088
-    fbs = models.PositiveSmallIntegerField(null=True, blank=True) # min: 18, max: 685, mean: 98.937808
-    total_cholesterol = models.PositiveSmallIntegerField(null=True, blank=True) # min: 51, max: 296, mean: 192.881128
-    triglycerides = models.PositiveSmallIntegerField(null=True, blank=True) # min: 1, max: 297, mean: 113.388876
-    hdl = models.PositiveSmallIntegerField(null=True, blank=True) # min: 1, max: 97, mean: 56.790048
-    ldl = models.FloatField(null=True, blank=True) # min: -12.2, max: 204.0, mean: 113.38690240000004
-    hemoglobin = models.FloatField(null=True, blank=True) # min: 3.1, max: 24.0, mean: 14.080745199999802
-    up = models.PositiveSmallIntegerField(null=True, blank=True) # min: 1, max: 6, mean: 1.086776
-    serum_creatinine = models.FloatField(null=True, blank=True) # min: 0.1, max: 87.0, mean: 0.8616396000000133
-    ast = models.PositiveSmallIntegerField(null=True, blank=True) # min: 1, max: 2890, mean: 24.997716
-    alt = models.PositiveSmallIntegerField(null=True, blank=True) # min: 1, max: 5206, mean: 24.341336
-    gamma = models.PositiveSmallIntegerField(null=True, blank=True) # min: 1, max: 999, mean: 33.369892
-    smoke = models.PositiveSmallIntegerField(null=True, blank=True) # min: 1, max: 3, mean: 1.57258
-    cavity_screen = models.PositiveSmallIntegerField(null=True, blank=True) # min: 0, max: 1, mean: 0.401572
-    diabetes = models.PositiveSmallIntegerField(null=True, blank=True) # min: 0, max: 1, mean: 0.064648
-    hypertension = models.PositiveSmallIntegerField(null=True, blank=True) # min: 0, max: 1, mean: 0.0378
-    liver = models.PositiveSmallIntegerField(null=True, blank=True) # min: 0, max: 1, mean: 0.033004
-    alcohol_hepatitis = models.PositiveSmallIntegerField(null=True, blank=True) # min: 0, max: 1, mean: 0.041848
+    id = models.IntegerField(primary_key=True) # 가입자일련번호
+  #  name = models.CharField(max_length=30)
+    sex = models.PositiveSmallIntegerField(null=True, blank=True) # 성별코드
+    old = models.PositiveSmallIntegerField(null=True, blank=True) # 연령대코드(5세단위)
+    city_sig = models.PositiveSmallIntegerField(null=True, blank=True) # 시도코드
+    height = models.PositiveSmallIntegerField(null=True, blank=True) # 신장(5Cm단위)
+    weight = models.PositiveSmallIntegerField(null=True, blank=True) # 체중(5Kg단위)
+    waist = models.PositiveSmallIntegerField(null=True, blank=True) # 허리둘레
+    eye_left = models.PositiveSmallIntegerField(null=True, blank=True) # 시력(좌)
+    eye_right = models.PositiveSmallIntegerField(null=True, blank=True) # 시력(우)
+    hearing_left = models.PositiveSmallIntegerField(null=True, blank=True) # 청력(좌)
+    hearing_right = models.PositiveSmallIntegerField(null=True, blank=True) # 청력(우)
+    systolic_pressure = models.PositiveSmallIntegerField(null=True, blank=True) # 수축기혈압
+    diastolic_pressure = models.PositiveSmallIntegerField(null=True, blank=True) # 이완기혈압
+    fbs = models.PositiveSmallIntegerField(null=True, blank=True) # 식전혈당(공복혈당)
+    total_cholesterol = models.PositiveSmallIntegerField(null=True, blank=True) # 총콜레스테롤
+    triglycerides = models.PositiveSmallIntegerField(null=True, blank=True) # 트리글리세라이드
+    hdl = models.PositiveSmallIntegerField(null=True, blank=True) # HDL콜레스테롤
+    ldl = models.FloatField(null=True, blank=True) # LDL콜레스테롤
+    hemoglobin = models.FloatField(null=True, blank=True) # 혈색소
+    up = models.PositiveSmallIntegerField(null=True, blank=True) # 요단백
+    serum_creatinine = models.FloatField(null=True, blank=True) # 혈청크레아티닌
+    ast = models.PositiveSmallIntegerField(null=True, blank=True) # (혈청지오티)AST
+    alt = models.PositiveSmallIntegerField(null=True, blank=True) # (혈청지오티)ALT
+    gamma = models.PositiveSmallIntegerField(null=True, blank=True) # 감마지티피
+    smoke = models.PositiveSmallIntegerField(null=True, blank=True) # 흡연상태
+    cavity_screen = models.PositiveSmallIntegerField(null=True, blank=True) # 구강검진 수검여부
+    diabetes = models.PositiveSmallIntegerField(null=True, blank=True) # 당뇨병 의사 판정
+    hypertension = models.PositiveSmallIntegerField(null=True, blank=True) # 고혈압 의사 판정
+    liver = models.PositiveSmallIntegerField(null=True, blank=True) # 간기능 이상여부
+    alcohol_hepatitis = models.PositiveSmallIntegerField(null=True, blank=True) # 알콜성간염여부
 
 
 
@@ -63,4 +64,33 @@ class Person(models.Model):
     email = models.EmailField(blank=True)
     birth_date = models.DateField()
     location = models.CharField(max_length=100, blank=True)
+
+
+CHOICES = (
+    ('당뇨병', '당뇨병'),
+    ('고혈압', '고혈압'),
+    ('이상지질혈증', '이상지질혈증')
+)
+GEN_CHOICES = (
+    (1, '남'),
+    (2, '여')
+)
+
+class Person1_train(models.Model):
+    reg_no = models.IntegerField(primary_key=True, default= 100000)  # 가입자일련번호
+    name = models.CharField(max_length=30) # 이름
+    gender = models.IntegerField(choices=GEN_CHOICES, default="남")  # 성별코드
+    age = models.PositiveSmallIntegerField()  # 연령대코드(5세단위)
+    height = models.PositiveSmallIntegerField()  # 신장(5Cm단위)
+    weight = models.PositiveSmallIntegerField()  # 체중(5Kg단위)
+    waist = models.PositiveSmallIntegerField()  # 허리둘레
+    systolic_pressure = models.PositiveSmallIntegerField()  # 수축기혈압
+    diastolic_pressure = models.PositiveSmallIntegerField()  # 이완기혈압
+    cavity_screen = models.PositiveSmallIntegerField()  # 구강검진 수검여부
+    disease = models.CharField(choices=CHOICES, max_length=30, default="당뇨병")
+
+
+    def __str__(self):
+        return self.name
+
 
