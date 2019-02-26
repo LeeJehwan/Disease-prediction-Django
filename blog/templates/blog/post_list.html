@@ -1,9 +1,10 @@
 {% extends 'blog/base.html' %}
-{% load static %}
+{% load staticfiles %}
 {% block content %}
 
-<img src="ggang.png">
-
+<center>
+<img src="{% static 'image/ggang.png' %}", width = "500", height="500">
+</center>
 <!--
         {% for post in posts %}
             <div class="post">
@@ -23,7 +24,7 @@
                     <td><B>성별코드</B></td>
                     <td><B>연령대코드</B></td>
                     <td><B>시도코드</B></td>
-                    <td><B>신장(5Cm단위)</B></td>
+                    <td><B>신장(5Cm단위)<./B></td>
                     <td><B>체중(5Kg단위)</B></td>
                     <td><B>허리둘레</B></td>
                     <td><B>시력(좌)</B></td>
