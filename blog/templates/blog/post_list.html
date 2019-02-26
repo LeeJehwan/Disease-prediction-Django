@@ -2,8 +2,9 @@
 {% load static %}
 {% block content %}
 
+<img src="ggang.png">
 
-
+<!--
         {% for post in posts %}
             <div class="post">
                 <div class="date">
@@ -13,7 +14,6 @@
                 <p>{{ post.text|linebreaksbr }}</p>
             </div>
         {% endfor %}
-
 
         <div class="train_data">
             <table class="table table-striped">
@@ -29,7 +29,7 @@
                     <td><B>시력(좌)</B></td>
                 </tr>
                 </thead>
-                <!-- 이 부분이 바뀌었습니다 -->
+
                 <tbody>
                 {% for train_data in train_datas %}
                 <tr>
@@ -43,10 +43,12 @@
                     <td>{{ train_data.eye_left }} </td>
                 </tr>
                 {% endfor %}
-                <!-- 여기까지 -->
+
                 <tbody>
             </table>
         </div>
+
+-->
 
 
         {% endblock %}
