@@ -1,9 +1,10 @@
 #!/usr/bin/env python
 import os
 import sys
+from blog import web_code
 
 if __name__ == "__main__":
-
+    web_code.train()
     os.environ.setdefault("DJANGO_SETTINGS_MODULE", "mysite.settings")
     try:
         from django.core.management import execute_from_command_line
