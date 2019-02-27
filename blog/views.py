@@ -104,6 +104,11 @@ def has_disease(request):
 
 
 
+def people(request):
+    return render(request, 'blog/people.html', {})
+
+
+
 
 def analysis(request):
     return render(request, 'blog/analysis.html', {})

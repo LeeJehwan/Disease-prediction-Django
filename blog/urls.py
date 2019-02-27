@@ -10,5 +10,6 @@ urlpatterns = [
     url(r'^result/$', views.result, name='result'),
     url(r'^analysis/no_disease/$', views.no_disease, name='no_disease'),
     url(r'^analysis/has_disease/$', views.has_disease, name='has_disease'),
+    url(r'^people/$', views.people, name='people'),
 
 ]
