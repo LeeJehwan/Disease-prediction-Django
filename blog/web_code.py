@@ -1,16 +1,13 @@
 import pandas as pd
 from sklearn.ensemble import RandomForestClassifier
-from xgboost import XGBClassifier
 from lightgbm import LGBMClassifier
 from sklearn.model_selection import train_test_split
 
 rf = RandomForestClassifier(n_jobs=-1)
 lgb_diab = LGBMClassifier(n_jobs=-1, )
-xgb_diab = XGBClassifier(n_jobs=-1, )
 rf_ab_rf = RandomForestClassifier(n_jobs=-1)
 rf_hbp_lgbm = LGBMClassifier(n_jobs=-1)
 rf_ab_lgbm = LGBMClassifier(n_jobs=-1)
-rf_ab_xgb = XGBClassifier(n_jobs=-1, objective='multi:softprob')
 rf_hbp = RandomForestClassifier(n_jobs=-1)
 
 
