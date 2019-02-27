@@ -13,8 +13,7 @@ rf_hbp = RandomForestClassifier(n_jobs=-1)
 
 
 def train():
-    PATH = os.getcwd()
-    data_raw = pd.read_csv(PATH + '/data/dataset_to_web.csv')
+    data_raw = pd.read_csv('./data/dataset_to_web.csv')
     data = data_raw.copy()
 
     data_diab = data[['가입자일련번호','성별코드', '연령대코드(5세단위)', '허리둘레', '수축기혈압',
