@@ -2,6 +2,7 @@ import pandas as pd
 from sklearn.ensemble import RandomForestClassifier
 from lightgbm import LGBMClassifier
 from sklearn.model_selection import train_test_split
+import os
 
 rf = RandomForestClassifier(n_jobs=-1)
 lgb_diab = LGBMClassifier(n_jobs=-1, )
@@ -12,7 +13,8 @@ rf_hbp = RandomForestClassifier(n_jobs=-1)
 
 
 def train():
-    data_raw = pd.read_csv('/home/pirl/djangogirls/blog/dataset_to_web.csv')
+    PATH = os.getcwd()
+    data_raw = pd.read_csv(PATH + '/data/dataset_to_web.csv')
     data = data_raw.copy()
 
     data_diab = data[['가입자일련번호','성별코드', '연령대코드(5세단위)', '허리둘레', '수축기혈압',
