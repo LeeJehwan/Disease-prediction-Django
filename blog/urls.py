@@ -11,5 +11,5 @@ urlpatterns = [
     url(r'^analysis/no_disease/$', views.no_disease, name='no_disease'),
     url(r'^analysis/has_disease/$', views.has_disease, name='has_disease'),
     url(r'^people/$', views.people, name='people'),
-    url(r'^result2/$', views.no_disease, name='no_disease'),
+    url(r'^result2/$', views.result2, name='result2'),
 ]

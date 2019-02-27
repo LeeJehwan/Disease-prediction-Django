@@ -192,21 +192,24 @@ def train():
 
 def run_model(patient_type, test_data):
   if patient_type == '당뇨병':
-      return disease_result(rf.predict(test_data))
+      return disease_result(rf.predict(test_data), patient_type)
   elif patient_type == '고혈압':
-      return disease_result(rf_hbp.predict(test_data))
+      return disease_result(rf_hbp.predict(test_data), patient_type)
   elif patient_type == '이상지질혈증':
-      return disease_result(rf_ab_lgbm.predict(test_data))
+      return disease_result(rf_ab_lgbm.predict(test_data), patient_type)
 
 
-def disease_result(data):
+
+
+def disease_result(data, patient_type):
     if data == 0 :
-        return '합병증의 의심 여부가 없습니다.'
+        return '합병증의 의심 여부가 없습니다. \n 그렇지만 {}은 합병증을 쉽게 유발합니다. 꼭 건강관리를 해주세요!'.format(patient_type)
     elif data == 1:
-        return '합병증(당뇨병 + 고혈압)이 예상됩니다.'
+        return '합병증(당뇨병 + 고혈압)이 예상됩니다.\n 아래 내용을 참고하셔서 건강 관리에 신경써주세요.'
     elif data == 2:
-        return '합병증(이상지질혈증 + 고혈압)이 예상됩니다.'
+        return '합병증(이상지질혈증 + 고혈압)이 예상됩니다.\n 아래 내용을 참고하셔서 건강 관리에 신경써주세요.'
     elif data == 3:
-        return '합병증(당뇨병 + 고혈압)이 예상됩니다.'
+        return '합병증(당뇨병 + 고혈압)이 예상됩니다.\n 아래 내용을 참고하셔서 건강 관리에 신경써주세요.'
     elif data == 4:
-        return '합병증(당뇨병 + 고혈압 + 이상지질혈증)이 예상됩니다.'
+        return '합병증(당뇨병 + 고혈압 + 이상지질혈증)이 예상됩니다.\n 아래 내용을 참고하셔서 건강 관리에 신경써주세요.'
+

@@ -16,7 +16,7 @@
   body {
     font-family: 'Nanum Gothic', sans-serif;
     line-height: 1.8;
-    color: #f5f6f7;
+    color: #000000;
   }
   p {font-size: 16px;}
   .margin {margin-bottom: 45px;}
@@ -118,7 +118,7 @@ Highcharts.chart('container', {
 
     series: [{
         name: '{{name}}',
-        data: [{{datalist.bmi}}, {{datalist.systolic_pressure}}, {{datalist.diastolic_pressure}} ]
+        data: [{{datalist.bmi}}, {{datalist.diastolic_pressure}}, {{datalist.systolic_pressure}} ]
     }, {
         name: '정상수치',
         data: [27, 80, 120]
@@ -128,7 +128,102 @@ Highcharts.chart('container', {
 </div>
 
 
+<div>
+    {% if disease == '당뇨병' %}
+    <div>
+        <h2 id="pageTitle1">당뇨병 관리</h2>
+        <div id="content">
+            <div class ="editorContents">
+                <div class ="newDept subContents">
+                    <p style="line-height: 18pt; margin-top: 0px; margin-bottom: 0px;">
 
+                        <h4 style="color: rgb(0,0,128);">일상생활 당뇨병 관리</h4>
+                        1. 항상 규칙적인 생활을 해야 합니다. (식사시간, 식사량, 숙면시간, 약복용시간)<br>
+                        2. 표준체중 조절을 위해 식사요법과 운동요법을 철저히 해야합니다.<br>
+                        3. 규칙적으로 병원을 방문해야 합니다.<br>
+                        4. 의사의 처방을 받지 않은 약물은 함부로 복용하지 않습니다.<br>
+
+                    </p>
+
+                    <p style="line-height: 18pt; margin-top: 0px; margin-bottom: 0px;">
+                        <h4 style="color: rgb(0,0,128);">당뇨병 식사요법의 기본 원칙</h4>
+                        1. 매일 일정한 시간에 알맞은 양의 음식을 규칙적으로 먹습니다.<br>
+                        2. 설탕이나 꿀 등 단순당의 섭취를 주의합니다.<br>
+                        3. 식이섬유소를 적절히 섭취합니다.<br>
+                        4. 지방을 적정량 섭취하며 콜레스테롤의 섭취를 제한합니다.<br>
+                        5. 소금 섭취를 줄입니다.<br>
+                        6. 술은 피하는 것이 좋습니다.<br>
+                    </p>
+
+                    <p style="line-height: 18pt; margin-top: 0px; margin-bottom: 0px;">
+                        <h4 style="color: rgb(0,0,128);">당뇨병 피해야할 음식</h4>
+                        1. 젤리, 잼, 통조림, 과일<br>
+                        2. 프렌치프라이, 튀김류<br>
+                        3. 사탕, 쿠키, 시럽<br>
+                        4. 흰 밀가루, 흰쌀 (정제된 탄수화물)<br>
+                        5. 탄산음료<br>
+                        6. 핫도그, 베이컨 (가공육)<br>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+    {% endif %}
+    {% if disease == '이상지질혈증' %}
+       <div>
+        <h2 id="pageTitle2">이상지질혈증 관리</h2>
+        <div id="content2">
+            <div class ="editorContents">
+                <div class ="newDept subContents">
+                    <p style="line-height: 18pt; margin-top: 0px; margin-bottom: 0px;">
+
+                        <h4 style="color: rgb(0,0,128);">일상생활 이상지질혈증 관리</h4>
+                        1. 건강한 식습관을 가집니다.<br>
+                        2. 규칙적으로 운동합니다.<br>
+                        3. 적정 체중과 허리둘레를 유지합니다.<br>
+                        4. 금연합니다.<br>
+                        5. 절주합니다.<br>
+
+
+
+                    </p>
+
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+    {% endif %}
+
+    {% if disease == '고혈압' %}
+           <div>
+        <h2 id="pageTitle3">고혈압 관리</h2>
+        <div id="content3">
+            <div class ="editorContents">
+                <div class ="newDept subContents">
+                    <p style="line-height: 18pt; margin-top: 0px; margin-bottom: 0px;">
+
+                        <h4 style="color: rgb(0,0,128);">고혈압 일상생활 관리</h4>
+                        1. 음식을 골고루 싱겁게 먹습니다.<br>
+                        2. 살이 찌지 않도록 알맞은 체중을 유지합니다.<br>
+                        3. 매일 30분 이상 적절한 운동을 합니다.<br>
+                        4. 담배는 끊고 술은 삼가합니다.<br>
+                        5. 지방을 줄이고 야채를 많이 섭취합니다.<br>
+                        6. 스트레스를 피하고 평온한 마음을 유지합니다.<br>
+                        7. 정기적으로 혈압을 측저아고 의사의 진찰을 받습니다.<br>
+
+                    </p>
+
+
+                </div>
+            </div>
+        </div>
+    </div>
+    {% endif %}
+
+
+</div>
 
 
 

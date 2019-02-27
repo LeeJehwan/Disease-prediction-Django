@@ -136,38 +136,20 @@ def has_disease(request):
 
 
             predict = web_code.run_model(post.disease, df)
-            print(post.name, predict)
-            return render(request, 'blog/result.html', {'name': post.name , 'predict': predict, 'datalist' : datalist})
+            return render(request, 'blog/result.html', {'name': post.name , 'predict': predict, 'datalist' : datalist, 'disease': post.disease})
     else:
         form = Person1Form()
     return render(request, 'blog/has_disease.html', {'form': form})
 
 
-
-
-def people(request):
-    return render(request, 'blog/people.html', {})
-
-
-
-
-def analysis(request):
-    return render(request, 'blog/analysis.html', {})
-
-
-def result(request):
-    return render(request, 'blog/result.html', {'predict':predict})
-
-
-
-
 def no_disease(request):
     if request.method == "POST":
+        print('1')
         form = M1_dataForm(request.POST)
         if form.is_valid():
             post = form.save(commit=False)
             post.save()
-
+            print('test')
             raw_data = {'BMI' : [post.bmi],
                         '시도코드' : [post.location],
                         '트리글리세라이드' : [post.triglycerides],
@@ -185,8 +167,31 @@ def no_disease(request):
             data = pd.DataFrame(raw_data)
             a,b,c= test_model(data)
             mx = int(max(a,b,c))
-            mx=50
             return render(request, 'blog/result2.html', {'a':a,'b':b,'c':c,'mx':mx})
     else:
+        print(2)
         form = M1_dataForm()
-    return render(request, 'blog/no_disease.html',{'form':form})
+    return render(request, 'blog/no_disease.html', {'form':form})
+
+
+
+
+
+
+
+def people(request):
+    return render(request, 'blog/people.html', {})
+
+
+
+
+def analysis(request):
+    return render(request, 'blog/analysis.html', {})
+
+
+def result(request):
+    return render(request, 'blog/result.html', {'predict':predict})
+
+def result2(request):
+    return render(request, 'blog/result2.html', {'predict':predict})
+
