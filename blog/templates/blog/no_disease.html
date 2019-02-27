@@ -79,11 +79,28 @@
 </nav>
 
 
+<!-- First Container -->
+<div class="container-fluid bg-3 text-center">
+    <h1 class="margin">
+        <span style="font-weight:bold;">
+            질병을 예측하고 싶으신가요?
+        </span>
+    </h1>
+    <center>
+
+<div class="post">
+        <h1>질병 위험도 예측</h1><br><br>
+        <form method="POST" class="post-form">{% csrf_token %}
+            {{ form.as_p }}
+            <button tpye="submit" class="save btn btn-defult">제출</button>
+        </form>
+</div>
+
+        </center>
+  <h3>내가 도와줌ㅎ </h3>
+</div>
 
 
-
-
-<h1> <font color="black"> 질병 없음  </font></h1>
 
 
 

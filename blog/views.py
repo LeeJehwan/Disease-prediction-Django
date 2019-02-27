@@ -3,6 +3,9 @@ from django.utils import timezone
 from .models import Post
 from .models import Train_data
 from .models import Person1_train
+from .forms import M1_dataForm
+from .test import test_model
+
 from django.shortcuts import render, get_object_or_404
 from .forms import PostForm, Person1Form
 from django.shortcuts import redirect
@@ -89,9 +92,6 @@ def simple_upload2(request):
     return render(request, 'core/simple_upload2.html')
 
 
-def no_disease(request):
-    return render(request, 'blog/no_disease.html', {})
-
 
 def has_disease(request):
     if request.method == "POST":
@@ -158,3 +158,35 @@ def analysis(request):
 def result(request):
     return render(request, 'blog/result.html', {'predict':predict})
 
+
+
+
+def no_disease(request):
+    if request.method == "POST":
+        form = M1_dataForm(request.POST)
+        if form.is_valid():
+            post = form.save(commit=False)
+            post.save()
+
+            raw_data = {'BMI' : [post.bmi],
+                        '시도코드' : [post.location],
+                        '트리글리세라이드' : [post.triglycerides],
+                        'HDL콜레스테롤' : [post.hdl],
+                        'LDL콜레스테롤' : [post.ldl],
+                        '식전혈당(공복혈당)' : [post.fbs],
+                        '성별코드' : [post.sex],
+                        '허리둘레' : [post.waist],
+                        '수축기혈압': [post.systolic_pressure],
+                        '이완기혈압': [post.diastolic_pressure],
+                        '연령대코드(5세단위)': [post.old // 5],
+                        '흡연상태': [post.smoke],
+                        '알콜성간염여부' :[post.alcohol_hepatitis],
+                        }
+            data = pd.DataFrame(raw_data)
+            a,b,c= test_model(data)
+            mx = int(max(a,b,c))
+            mx=50
+            return render(request, 'blog/result2.html', {'a':a,'b':b,'c':c,'mx':mx})
+    else:
+        form = M1_dataForm()
+    return render(request, 'blog/no_disease.html',{'form':form})
