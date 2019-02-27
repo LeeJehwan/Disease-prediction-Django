@@ -12,6 +12,7 @@ from .resources import PersonResource
 from .resources import TrainResource
 from . import web_code
 import pandas as pd
+from . import models
 
 predict = "NO RESULT"
 start = 1
@@ -92,14 +93,12 @@ def no_disease(request):
     return render(request, 'blog/no_disease.html', {})
 
 
-
 def has_disease(request):
     if request.method == "POST":
         form = Person1Form(request.POST)
         if form.is_valid():
             post = form.save(commit=False)
             post.save()
-            print(post.disease)
 
             bmi = post.weight / ((post.height / 100) ** 2)
 

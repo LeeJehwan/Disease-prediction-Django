@@ -75,9 +75,13 @@ GEN_CHOICES = (
     (1, '남'),
     (2, '여')
 )
+TEE_CHOICES = (
+    (0, '아니오'),
+    (1, '예')
+)
 
 class Person1_train(models.Model):
-    reg_no = models.IntegerField(primary_key=True, default= 100000)  # 가입자일련번호
+    reg_no = models.AutoField(primary_key=True) # 가입자일련번호
     name = models.CharField(max_length=30) # 이름
     gender = models.IntegerField(choices=GEN_CHOICES, default="남")  # 성별코드
     age = models.PositiveSmallIntegerField()  # 연령대코드(5세단위)
@@ -86,8 +90,9 @@ class Person1_train(models.Model):
     waist = models.PositiveSmallIntegerField()  # 허리둘레
     systolic_pressure = models.PositiveSmallIntegerField()  # 수축기혈압
     diastolic_pressure = models.PositiveSmallIntegerField()  # 이완기혈압
-    cavity_screen = models.PositiveSmallIntegerField()  # 구강검진 수검여부
+    cavity_screen = models.IntegerField(choices=TEE_CHOICES, default="아니오")
     disease = models.CharField(choices=CHOICES, max_length=30, default="당뇨병")
+
 
 
     def __str__(self):
