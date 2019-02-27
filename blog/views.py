@@ -14,8 +14,12 @@ from . import web_code
 import pandas as pd
 
 predict = "NO RESULT"
-
+start = 1
 def post_list(request):
+    global start
+    if start == 1:
+        web_code.train()
+        start += 1
     posts = Post.objects.filter(published_date__lte = timezone.now()).order_by('published_date')
     train_datas = Train_data.objects.all()
     return render(request, 'blog/post_list.html', {'posts': posts , 'train_datas': train_datas})
