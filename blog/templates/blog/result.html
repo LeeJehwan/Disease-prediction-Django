@@ -21,7 +21,7 @@
   p {font-size: 16px;}
   .margin {margin-bottom: 45px;}
   .bg-1 {
-    background-color: #abc9c1; /* Green */
+    background-color: #417690; /* Green  abc9c1*/
     color: #ffffff;
   }
   .bg-2 {
@@ -72,7 +72,6 @@
       <ul class="nav navbar-nav navbar-right">
 
           <li><a href="{% url 'analysis' %}"><font size="4">질병 진단</font></a></li>
-          <li><a href="{% url 'result' %}"><font size="4">분석 결과</font></a></li>
           <li><a href="{% url 'people' %}"><font size="4">people</font></a></li>
       </ul>
     </div>
@@ -90,10 +89,47 @@
         </span>
     </h1>
 
-
-
-
 </div>
+
+
+<br><br>
+<div id="container" style="width: 550px; height: 550px; margin: 0; float:left">
+<script src="https://code.highcharts.com/highcharts.src.js"></script>
+<script>
+Highcharts.chart('container', {
+    chart: {
+        type: 'column'
+    },
+    title: {
+        text: '주요 항목별 수치'
+    },
+    xAxis: {
+        categories: ['BMI', '이완기혈압', '수축기혈압']
+    },
+
+    plotOptions: {
+        column: {
+            dataLabels: {
+                enabled: true,
+                color: (Highcharts.theme && Highcharts.theme.dataLabelsColor) || 'black'
+            }
+        }
+    },
+
+    series: [{
+        name: '{{name}}',
+        data: [{{datalist.bmi}}, {{datalist.systolic_pressure}}, {{datalist.diastolic_pressure}} ]
+    }, {
+        name: '정상수치',
+        data: [27, 80, 120]
+    }]
+});
+</script>
+</div>
+
+
+
+
 
 
 

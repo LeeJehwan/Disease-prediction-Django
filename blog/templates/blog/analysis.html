@@ -21,7 +21,7 @@
   p {font-size: 16px;}
   .margin {margin-bottom: 45px;}
   .bg-1 {
-    background-color: #1abc9c; /* Green */
+    background-color: #417690; /* Green */
     color: #ffffff;
   }
   .bg-2 {
@@ -53,6 +53,13 @@
     color: #1abc9c !important;
   }
 
+.container-fluid img{
+
+width: 15%;
+height: 15%;
+}
+
+
   </style>
 </head>
 
@@ -73,8 +80,9 @@
       <ul class="nav navbar-nav navbar-right">
 
           <li><a href="{% url 'analysis' %}"><font size="4">질병 진단</font></a></li>
-          <li><a href="{% url 'result' %}"><font size="4">분석 결과</font></a></li>
           <li><a href="{% url 'people' %}"><font size="4">people</font></a></li>
+
+
 
       </ul>
     </div>
@@ -91,12 +99,16 @@
     </h1>
     <center>
 
-        <div id = "test1">
-            <a href="{% url 'no_disease' %}"><img src="{% static 'image/healthy.png' %}" alt="" ></a>
+            <a href="{% url 'no_disease' %}"><img src="{% static 'image/healthy.png' %}" alt="" ></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
             <a href="{% url 'has_disease' %}"><img src="{% static  'image/sick.png' %}" alt=""></a>
-        </div>
 
 
+            <br>
+            <h1 class="margin">
+        <span style="font-weight:bold;">
+            질병 예측&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;합병증 예측
+        </span>
+    </h1>
     </center>
 </div>
 

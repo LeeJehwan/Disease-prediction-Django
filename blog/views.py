@@ -96,11 +96,12 @@ def no_disease(request):
 def has_disease(request):
     if request.method == "POST":
         form = Person1Form(request.POST)
+        print(form)
         if form.is_valid():
             post = form.save(commit=False)
             post.save()
 
-            bmi = post.weight / ((post.height / 100) ** 2)
+            bmi = round((post.weight / ((post.height / 100) ** 2)),2)
 
             raw_data = {'성별코드': [post.gender],
                         '연령대코드(5세단위)': [post.age//5],
@@ -124,10 +125,19 @@ def has_disease(request):
             elif post.disease == "이상지질혈증":
                 df = df.drop(["당뇨병 의사 판정", "고혈압 의사 판정"], axis = 1)
 
+            datalist = {'gender': [post.gender],
+                        'age': [post.age//5],
+                        'waist': [post.waist],
+                        'systolic_pressure': [post.systolic_pressure],
+                        'diastolic_pressure': [post.diastolic_pressure],
+                        'bmi': [bmi],
+                        'cavity_screen': [post.cavity_screen],
+                        }
+
 
             predict = web_code.run_model(post.disease, df)
-            print(predict)
-            return render(request, 'blog/result.html', {'name': post.name , 'predict': predict})
+            print(post.name, predict)
+            return render(request, 'blog/result.html', {'name': post.name , 'predict': predict, 'datalist' : datalist})
     else:
         form = Person1Form()
     return render(request, 'blog/has_disease.html', {'form': form})
