@@ -97,6 +97,14 @@
                         text: '위험도 수치'
                     },
                 },
+                plotOptions: {
+                    column: {
+                        dataLabels: {
+                            enabled: true,
+                            color: (Highcharts.theme && Highcharts.theme.dataLabelsColor) || 'black'
+                        }
+                    }
+                },
                 series: [{
                     name: '당뇨병 위험도',
                     data: [{{a}}],

@@ -115,7 +115,11 @@ Highcharts.chart('container', {
             }
         }
     },
-
+    yAxis: {
+                    title: {
+                        text: '수치'
+                    },
+                },
     series: [{
         name: '{{name}}',
         data: [{{datalist.bmi}}, {{datalist.diastolic_pressure}}, {{datalist.systolic_pressure}} ]
