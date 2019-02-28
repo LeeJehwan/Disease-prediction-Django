@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="b580e6a9-b07f-49e9-970c-873f3e5b5c2a" name="Default Changelist" comment="image_add">
+    <list default="true" id="b580e6a9-b07f-49e9-970c-873f3e5b5c2a" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/blog/templates/blog/has_disease.html" beforeDir="false" afterPath="$PROJECT_DIR$/blog/templates/blog/has_disease.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/blog/templates/blog/no_disease.html" beforeDir="false" afterPath="$PROJECT_DIR$/blog/templates/blog/no_disease.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/blog/templates/blog/people.html" beforeDir="false" afterPath="$PROJECT_DIR$/blog/templates/blog/people.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/blog/templates/blog/post_list.html" beforeDir="false" afterPath="$PROJECT_DIR$/blog/templates/blog/post_list.html" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -14,11 +15,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/blog/templates/blog/no_disease.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="510">
-              <caret line="220" column="58" selection-start-line="220" selection-start-column="58" selection-end-line="220" selection-end-column="58" />
+            <state relative-caret-position="-612">
+              <caret line="154" column="82" selection-start-line="154" selection-start-column="82" selection-end-line="154" selection-end-column="82" />
             </state>
           </provider>
         </entry>
@@ -101,17 +102,17 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/blog/templates/blog/has_disease.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="155">
+            <state relative-caret-position="665">
               <caret line="189" column="58" selection-start-line="189" selection-start-column="58" selection-end-line="189" selection-end-column="58" />
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/blog/templates/blog/people.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="542">
-              <caret line="102" selection-start-line="102" selection-end-line="102" />
+            <state relative-caret-position="389">
+              <caret line="93" column="44" selection-start-line="93" selection-start-column="44" selection-end-line="93" selection-end-column="44" />
               <folding>
                 <element signature="n#style#0;n#span#0;n#h1#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
               </folding>
@@ -131,8 +132,13 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/blog/templates/blog/post_list.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="219">
-              <caret line="109" selection-start-line="109" selection-end-line="109" />
+            <state relative-caret-position="476">
+              <caret line="130" lean-forward="true" selection-start-line="130" selection-end-line="130" />
+              <folding>
+                <element signature="n#style#0;n#div#0;n#div#0;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#0;n#div#2;n#div#0;n#div#0;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#1;n#div#0;n#div#2;n#div#0;n#div#0;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -158,6 +164,7 @@
       <find>blog_m1_train_data</find>
       <find>정상</find>
       <find>나이</find>
+      <find>LDL</find>
       <find>age</find>
     </findStrings>
   </component>
@@ -184,23 +191,23 @@
         <option value="$PROJECT_DIR$/blog/forms.py" />
         <option value="$PROJECT_DIR$/blog/resources.py" />
         <option value="$PROJECT_DIR$/blog/test.py" />
-        <option value="$PROJECT_DIR$/blog/templates/blog/people.html" />
         <option value="$PROJECT_DIR$/blog/models.py" />
         <option value="$PROJECT_DIR$/blog/urls.py" />
         <option value="$PROJECT_DIR$/blog/views.py" />
         <option value="$PROJECT_DIR$/blog/web_code.py" />
-        <option value="$PROJECT_DIR$/blog/templates/blog/post_list.html" />
         <option value="$PROJECT_DIR$/blog/templates/blog/result2.html" />
         <option value="$PROJECT_DIR$/blog/templates/blog/result.html" />
         <option value="$PROJECT_DIR$/blog/templates/blog/analysis.html" />
         <option value="$PROJECT_DIR$/blog/templates/blog/has_disease.html" />
+        <option value="$PROJECT_DIR$/blog/templates/blog/post_list.html" />
         <option value="$PROJECT_DIR$/blog/templates/blog/no_disease.html" />
+        <option value="$PROJECT_DIR$/blog/templates/blog/people.html" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="674" />
-    <option name="y" value="44" />
+    <option name="x" value="992" />
+    <option name="y" value="-4" />
     <option name="width" value="928" />
     <option name="height" value="1084" />
   </component>
@@ -556,7 +563,14 @@
       <option name="project" value="LOCAL" />
       <updated>1551315791017</updated>
     </task>
-    <option name="localTasksCounter" value="33" />
+    <task id="LOCAL-00033" summary="image_add">
+      <created>1551315947842</created>
+      <option name="number" value="00033" />
+      <option name="presentableId" value="LOCAL-00033" />
+      <option name="project" value="LOCAL" />
+      <updated>1551315947842</updated>
+    </task>
+    <option name="localTasksCounter" value="34" />
     <servers />
   </component>
   <component name="TodoView">
@@ -873,23 +887,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/blog/templates/blog/people.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="542">
-          <caret line="102" selection-start-line="102" selection-end-line="102" />
-          <folding>
-            <element signature="n#style#0;n#span#0;n#h1#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/blog/templates/blog/post_list.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="219">
-          <caret line="109" selection-start-line="109" selection-end-line="109" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/blog/templates/blog/result2.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="442">
@@ -938,17 +935,39 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/blog/templates/blog/has_disease.html">
+    <entry file="file://$PROJECT_DIR$/blog/templates/blog/post_list.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="155">
-          <caret line="189" column="58" selection-start-line="189" selection-start-column="58" selection-end-line="189" selection-end-column="58" />
+        <state relative-caret-position="476">
+          <caret line="130" lean-forward="true" selection-start-line="130" selection-end-line="130" />
+          <folding>
+            <element signature="n#style#0;n#div#0;n#div#0;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#div#2;n#div#0;n#div#0;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#1;n#div#0;n#div#2;n#div#0;n#div#0;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/blog/templates/blog/no_disease.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="510">
-          <caret line="220" column="58" selection-start-line="220" selection-start-column="58" selection-end-line="220" selection-end-column="58" />
+        <state relative-caret-position="-612">
+          <caret line="154" column="82" selection-start-line="154" selection-start-column="82" selection-end-line="154" selection-end-column="82" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/blog/templates/blog/has_disease.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="665">
+          <caret line="189" column="58" selection-start-line="189" selection-start-column="58" selection-end-line="189" selection-end-column="58" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/blog/templates/blog/people.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="389">
+          <caret line="93" column="44" selection-start-line="93" selection-start-column="44" selection-end-line="93" selection-end-column="44" />
+          <folding>
+            <element signature="n#style#0;n#span#0;n#h1#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
