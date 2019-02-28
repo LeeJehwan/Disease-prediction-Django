@@ -87,7 +87,7 @@
 <div class="container-fluid bg-3 text-center">
     <h1 class="margin">
         <span style="font-weight:bold;">
-            질병을 예측하고 싶으신가요?
+            당신의 건강은 안전합니까?
         </span>
     </h1>
     <center>
@@ -112,80 +112,3 @@
 </body>
 </html>
 
-
-<!-- Third Container (Grid) -->
-
-<!--
-
-
-<div class="container-fluid bg-3 text-center">
-  <h3 class="margin">Where To Find Me?</h3><br>
-  <div class="row">
-    <div class="col-sm-4">
-      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-      <img src="birds1.jpg" class="img-responsive margin" style="width:100%" alt="Image">
-    </div>
-    <div class="col-sm-4">
-      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-      <img src="birds2.jpg" class="img-responsive margin" style="width:100%" alt="Image">
-    </div>
-    <div class="col-sm-4">
-      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-      <img src="birds3.jpg" class="img-responsive margin" style="width:100%" alt="Image">
-    </div>
-  </div>
-</div>
-
-
-
-<center>
-<img src="{% static 'image/ggang.png' %}", width = "500", height="500">
-</center>
-        {% for post in posts %}
-            <div class="post">
-                <div class="date">
-                    {{ post.published_date }}
-                </div>
-                <h1><a href="{% url 'post_detail' pk=post.pk %}">{{ post.title }}</a></h1>
-                <p>{{ post.text|linebreaksbr }}</p>
-            </div>
-        {% endfor %}
-
-        <div class="train_data">
-            <table class="table table-striped">
-                <thead>
-                <tr>
-                    <td><B>가입자일련변호</B></td>
-                    <td><B>성별코드</B></td>
-                    <td><B>연령대코드</B></td>
-                    <td><B>시도코드</B></td>
-                    <td><B>신장(5Cm단위)<./B></td>
-                    <td><B>체중(5Kg단위)</B></td>
-                    <td><B>허리둘레</B></td>
-                    <td><B>시력(좌)</B></td>
-                </tr>
-                </thead>
-
-                <tbody>
-                {% for train_data in train_datas %}
-                <tr>
-                    <td> {{ train_data.id }} </td>
-                    <td> {{ train_data.sex }} </td>
-                    <td> {{ train_data.old }} </td>
-                    <td>{{ train_data.city_sig }} </td>
-                    <td> {{ train_data.height }} </td>
-                    <td> {{ train_data.weight }} </td>
-                    <td> {{ train_data.waist }} </td>
-                    <td>{{ train_data.eye_left }} </td>
-                </tr>
-                {% endfor %}
-
-                <tbody>
-            </table>
-        </div>
-
-
-
-
-
--->
